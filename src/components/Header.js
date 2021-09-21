@@ -7,7 +7,7 @@ export default function Header() {
         <div id="header">
             <a href="/">
                 <img src={GithubLogo} alt="GitHub logo" />
-                <strong>GitHub User Search</strong>
+                <h1>GitHub User Search</h1>
             </a>
         </div>
     )
