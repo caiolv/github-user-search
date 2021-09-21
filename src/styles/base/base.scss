@@ -5,13 +5,15 @@
 }
 
 #root {
-    max-width: 1440px;
     margin: 0 auto;
     padding-bottom: 50px;
 }
 
+main {
+    max-width: 1440px;
+}
+
 body {
-    background: #fff;
     color: #1D1F22;
 }
 

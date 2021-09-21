@@ -1,0 +1,23 @@
+#header {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    background: $dark-gray;
+    padding: 0 101px;
+
+    a {
+        display: flex;
+        align-items: center;
+        color: #Fff
+    }
+
+    img {
+        height: 70px;
+        width: 70px;
+    }
+
+    strong {
+        font-size: 28px;
+        margin-left: 10px;
+    }
+}
