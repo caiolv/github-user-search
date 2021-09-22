@@ -1,40 +1,30 @@
 #home {
-    min-height: 85vh;
-    height: 85vh;
-    align-items: center;
-    justify-content: center;
+    margin: 100px auto;
     flex-direction: column;
 
-    > img {
+    #logo {
         background: $dark-gray;
         border-radius: 50%;
         height: 150px;
         width: 150px;
         margin-bottom: 32px;
-    }
-
-    form {
-        align-items: center;
-        justify-content: center;
+        align-self: center;
     }
 
     input {
-        height: 50px;
-        width: 360px;
-        padding: 5px 40px 5px 15px;
         border-radius: 10px;
         border: 1px solid $light-gray;
-        box-shadow: 0px 5px 15px rgba(160, 160, 160, 0.3);
-        margin-right: 15px;
+        box-shadow: 0px 2px 15px rgba(160, 160, 160, 0.2);
+        padding: 10px 15px;
     }   
 
     button {
+        display: flex;
         align-items: center;
-        height: 50px;
-        padding: 15px;
+        padding: 10px 15px;
         border-radius: 10px;
         border: 1px solid $light-gray;
-        box-shadow: 0px 5px 15px rgba(160, 160, 160, 0.4);
+        box-shadow: 0px 5px 15px rgba(253, 234, 234, 0.4);
         transition: all .2s;
 
         img {

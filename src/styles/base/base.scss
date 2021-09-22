@@ -4,15 +4,6 @@
     box-sizing: border-box;
 }
 
-body * { 
-    display: flex;
-} 
-
-#root { 
-    margin: 0 auto;
-    flex-direction: column;
-}
-
 main {
     max-width: 1440px;
 }
