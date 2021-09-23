@@ -4,12 +4,11 @@ import { useParams, useLocation } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 
 import api from '../services/api';
 
 import Loader from '../components/Loader';
+import Repo from '../components/Repo';
 
 export default function Repos() {
     let location = useLocation();
@@ -46,26 +45,7 @@ export default function Repos() {
                     </Breadcrumb>
                     <Row className="justify-content-center">
                         {
-                            repos.map(repo => (
-                                <Card
-                                    bg="dark"
-                                    text="light"
-                                    className="m-2"
-                                    style={{ width: '18rem' }}
-                                >
-                                    <Card.Body>
-                                        <Card.Title>{repo.name}</Card.Title>
-                                        <Card.Subtitle className="mb-2 text-muted">{repo.language}</Card.Subtitle>
-                                        <Card.Text>{repo.description}</Card.Text>
-                                        <Button
-                                            href={repo.html_url}
-                                            className="btn btn-light"
-                                        >
-                                            Abrir repositório
-                                        </Button>
-                                    </Card.Body>
-                                </Card>
-                            ))
+                            repos.map(repo => (<Repo repo={repo} />))
                         }
                     </Row>
                 </Container>
