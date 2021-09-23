@@ -19,10 +19,10 @@ export default function Home() {
             <img id="logo" src={GithubLogo} alt="GitHub Logo" className="img-fluid" />
             <Form>
                 <Row className="d-flex justify-content-center">
-                    <Col xs="10" s="12" md="6" lg="6" xl="4" className="mb-0">
-                        <Form.Control type="text" placeholder="Buscar por usuário" />
+                    <Col xs="10" sm="8" md="6" lg="6" xl="4" className="mb-0">
+                        <Form.Control type="text" placeholder="Buscar por usuário" maxlength="255" />
                     </Col>
-                    <Col xs="4" s="12" md="2" lg="2" xl="2" className="d-flex justify-content-center mt-md-0 mt-sm-4 mt-xs-4 ">
+                    <Col xs="4" sm="3" md="2" lg="2" xl="2" className="d-flex justify-content-center mt-sm-0 mt-4">
                         <button type="submit" onClick={handleOnSubmit}>
                             Buscar
                             <img src={searchIcon} alt="Search Icon" />
