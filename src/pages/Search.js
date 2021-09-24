@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useLocation } from "react-router-dom";
 
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Nav from 'react-bootstrap/Nav';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 

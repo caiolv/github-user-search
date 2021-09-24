@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Image from 'react-bootstrap/Image';
-import Col from 'react-bootstrap/Col';
 
 const UserPreview = ({ user }) => {
     return (
@@ -25,18 +24,14 @@ const UserPreview = ({ user }) => {
 UserPreview.defaultProps = {
     user: {
         login: 'User',
-        language: 'Language',
-        description: 'Description',
-        html_url: 'URL',
+        avatar_url: 'URL',
     },
 };
 
 UserPreview.propTypes = {
     user: PropTypes.shape({
         login: PropTypes.string.isRequired,
-        language: PropTypes.string.isRequired,
-        description: PropTypes.string.isRequired,
-        html_url: PropTypes.string.isRequired,
+        avatar_url: PropTypes.string.isRequired,
     }),
 };
 
