@@ -4,6 +4,14 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
 const Repo = ({ repo, showUser }) => {
+    const {
+        owner,
+        name,
+        language,
+        description,
+        html_url,
+    } = repo;
+
     return (
         <Card
             bg="dark"
@@ -13,12 +21,12 @@ const Repo = ({ repo, showUser }) => {
         >
             <Card.Body className="d-flex flex-column justify-content-between">
                 <div>
-                    <Card.Text className="mb-2">{showUser ? `${repo.owner.login}/${repo.name}` : repo.name}</Card.Text>
-                    <Card.Subtitle className="mb-3 text-muted">{repo.language}</Card.Subtitle>
+                    <Card.Text className="mb-2">{showUser ? `${owner.login}/${name}` : name}</Card.Text>
+                    <Card.Subtitle className="mb-3 text-muted">{language}</Card.Subtitle>
                 </div>
-                <Card.Text>{repo.description}</Card.Text>
+                <Card.Text>{description}</Card.Text>
                 <Button
-                    href={repo.html_url}
+                    href={html_url}
                     className="btn btn-light"
                 >
                     Abrir repositório

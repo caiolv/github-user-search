@@ -24,8 +24,6 @@ export default function Repos() {
 
             const { data } = await api.get(`/users/${userParam}/${source}`);
 
-            console.log(data);
-
             setRepos(data);
             setLoading(false);
         }

@@ -18,7 +18,7 @@ export default function Home() {
     const handleOnSubmit = (e) => {
         e.preventDefault();
 
-        history.push(`/search?per_page=${PER_PAGE}&page=1&q=${search}`, {
+        history.push(`/search?q=${search}`, {
             search
         });
     }
@@ -28,10 +28,7 @@ export default function Home() {
             <img id="logo" src={GithubLogo} alt="GitHub Logo" className="img-fluid" />
             <Form action="/search">
                 <Row className="d-flex justify-content-center">
-                    <Col
-                        xs="10" sm="8" md="6" lg="6" xl="4"
-                        className="mb-0"
-                    >
+                    <Col xs="10" sm="8" md="6" lg="6" xl="4" className="mb-0" >
                         <Form.Control
                             type="text"
                             placeholder="Buscar por usuário, repositório ou starred"
