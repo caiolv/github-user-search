@@ -43,7 +43,7 @@ export default function SearchSource({ search, source, setFunc }) {
         <>
             {loading ? <Loader /> : (
                 <TabContainer eventKey={1} title={`${title} (${responseData.total_count})`}>
-                    <div className="mt-3 d-flex flex-wrap justify-content-center">
+                    <div className="mt-3 d-flex flex-wrap justify-content-center gap-2">
                         {
                             responseData.items.map(resp => (
                                 source === "users" ?

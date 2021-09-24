@@ -8,7 +8,7 @@ const UserPreview = ({ user }) => {
     return (
         <a
             href={`/${login}`}
-            className="d-flex flex-column p-3 m-0 justify-content-center align-items-center btn"
+            className="d-flex flex-column pt-3 pb-0 m-0 justify-content-center align-items-center btn btn-light"
             style={{ width: '12rem' }}
         >
             <Image
