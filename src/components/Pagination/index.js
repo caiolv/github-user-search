@@ -6,7 +6,7 @@ import { Container } from './styles';
 
 export default function Pagination({ page, handlePage }) {
     return (
-        <Container>
+        <Container className="p-5">
             <button
                 type="button"
                 disabled={page < 2}

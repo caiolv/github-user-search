@@ -8,6 +8,7 @@ import User from './pages/User';
 import Repos from './pages/Repos';
 import Search from './pages/Search';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/:user/repos" component={Repos} />
         <Route path="/:user/starred" component={Repos} />
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 }
