@@ -10,7 +10,7 @@ export const Container = styled.div`
   font-size: 12px;
 
   & > span {
-    font-size: 15px;
+    font-size: 14px;
     color: #666;
   }
 
@@ -22,12 +22,12 @@ export const Container = styled.div`
     outline: 0;
     border: 0;
     padding: 8px;
-    background: #fff;
+    background: transparent;
 
     span {
-      color: #7d40e7;
+      color: #0076f7;
       margin: 0 5px;
-      font-weight: bold;
+      /* font-weight: bold; */
     }
 
     &:disabled {

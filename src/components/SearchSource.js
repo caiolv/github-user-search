@@ -14,9 +14,9 @@ export default function SearchSource({ search, source, setFunc }) {
     let [loading, setLoading] = useState(false);
     const [page, setPage] = useState(1);
 
-    let title = source == "users" ? "Usuários" : "Repositórios";
+    let title = source === "users" ? "Usuários" : "Repositórios";
 
-    async function loadUsers() {
+    async function loadFromSource() {
         setLoading(true);
 
         const { data: resultResponse } = await api.get(`/search/${source}${search}`, {
@@ -31,7 +31,7 @@ export default function SearchSource({ search, source, setFunc }) {
     }
 
     useEffect(() => {
-        loadUsers();
+        loadFromSource();
     }, [page]);
 
     async function handlePage(action) {
@@ -46,14 +46,17 @@ export default function SearchSource({ search, source, setFunc }) {
                     <div className="mt-3 d-flex flex-wrap justify-content-center">
                         {
                             responseData.items.map(resp => (
-                                source == "users" ?
-                                    <UserPreview user={resp} />
+                                source === "users" ?
+                                    <UserPreview key={resp.id} user={resp} />
                                     :
-                                    <Repo repo={resp} />
+                                    <Repo key={resp.id} repo={resp} />
                             ))
                         }
                     </div>
-                    <Pagination page={page} handlePage={handlePage} />
+                    <Pagination
+                        page={page}
+                        handlePage={handlePage}
+                    />
                 </TabContainer>
             )
             }

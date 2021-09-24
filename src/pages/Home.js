@@ -9,8 +9,6 @@ import Form from 'react-bootstrap/Form';
 import GithubLogo from '../images/github-logo.svg';
 import searchIcon from '../images/search.svg';
 
-import { PER_PAGE } from '../services/api';
-
 export default function Home() {
     let history = useHistory();
     let [search, setSearch] = useState("");

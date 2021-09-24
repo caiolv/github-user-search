@@ -12,13 +12,16 @@ export default function Pagination({ page, handlePage }) {
                 disabled={page < 2}
                 onClick={() => handlePage('back')}
             >
-                <MdArrowBack size={15} color="#7d40e7" />
+                <MdArrowBack size={15} color="#0076f7" />
                 <span>Anterior</span>
             </button>
             <span>Página {page}</span>
-            <button type="button" onClick={() => handlePage('next')}>
+            <button
+                type="button"
+                onClick={() => handlePage('next')}
+            >
                 <span>Próximo</span>
-                <MdArrowForward size={15} color="#7d40e7" />
+                <MdArrowForward size={15} color="#0076f7" />
             </button>
         </Container>
     );
