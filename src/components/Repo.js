@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
-export default function Repo({ repo }) {
+const Repo = ({ repo, showUser }) => {
     return (
         <Card
             bg="dark"
@@ -10,9 +11,11 @@ export default function Repo({ repo }) {
             className="m-2"
             style={{ width: '18rem' }}
         >
-            <Card.Body>
-                <Card.Title>{repo.name}</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">{repo.language}</Card.Subtitle>
+            <Card.Body className="d-flex flex-column justify-content-between">
+                <div>
+                    <Card.Text className="mb-2">{showUser ? `${repo.owner.login}/${repo.name}` : repo.name}</Card.Text>
+                    <Card.Subtitle className="mb-3 text-muted">{repo.language}</Card.Subtitle>
+                </div>
                 <Card.Text>{repo.description}</Card.Text>
                 <Button
                     href={repo.html_url}
@@ -24,3 +27,23 @@ export default function Repo({ repo }) {
         </Card>
     )
 }
+
+Repo.defaultProps = {
+    repo: {
+        name: 'Repository',
+        language: 'Language',
+        description: 'Description',
+        html_url: 'URL',
+    },
+};
+
+Repo.propTypes = {
+    repo: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        language: PropTypes.string,
+        description: PropTypes.string,
+        html_url: PropTypes.string.isRequired,
+    }),
+};
+
+export default Repo;

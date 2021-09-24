@@ -33,23 +33,19 @@ export default function Repos() {
         getUserRepos();
     }, []);
 
-    console.log(location);
-
     return (
-        <>
+        <Container className="mt-4 mb-5">
+            <Breadcrumb>
+                <Breadcrumb.Item href={`/${userParam}`}>{userParam}</Breadcrumb.Item>
+                <Breadcrumb.Item active>{source}</Breadcrumb.Item>
+            </Breadcrumb>
             {loading ? <Loader /> : repos &&
-                <Container className="mt-4 mb-5">
-                    <Breadcrumb>
-                        <Breadcrumb.Item href={`/${userParam}`}>{userParam}</Breadcrumb.Item>
-                        <Breadcrumb.Item active>{source}</Breadcrumb.Item>
-                    </Breadcrumb>
-                    <Row className="justify-content-center">
-                        {
-                            repos.map(repo => (<Repo repo={repo} />))
-                        }
-                    </Row>
-                </Container>
+                <Row className="justify-content-center">
+                    {
+                        repos.map(repo => (<Repo repo={repo} />))
+                    }
+                </Row>
             }
-        </>
+        </Container>
     )
 }

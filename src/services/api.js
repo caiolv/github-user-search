@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+export const PER_PAGE = 20;
+
 const api = axios.create({
     baseURL: 'https://api.github.com/',
 });

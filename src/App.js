@@ -1,21 +1,25 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import "./styles/main.scss";
 
 import Home from './pages/Home';
 import User from './pages/User';
 import Repos from './pages/Repos';
+import Search from './pages/Search';
 import Header from './components/Header';
 
 function App() {
   return (
     <BrowserRouter>
       <Header />
-      <Route path="/" exact component={Home} />
-      <Route path="/:user" exact component={User} />
-      <Route path="/:user/repos" exact component={Repos} />
-      <Route path="/:user/starred" exact component={Repos} />
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/search" component={Search} />
+        <Route path="/:user" exact component={User} />
+        <Route path="/:user/repos" component={Repos} />
+        <Route path="/:user/starred" component={Repos} />
+      </Switch>
     </BrowserRouter>
   );
 }
