@@ -49,7 +49,7 @@ export default function SearchSource({ search, source, setFunc }) {
                                 source === "users" ?
                                     <UserPreview key={resp.id} user={resp} />
                                     :
-                                    <Repo key={resp.id} repo={resp} />
+                                    <Repo key={resp.id} repo={resp} showUser />
                             ))
                         }
                     </div>
