@@ -1,0 +1,11 @@
+#user {
+    img {
+        max-width: 200px;
+        width: 100%;
+        align-self: center;
+    }
+
+    h1 + a {
+        margin-left: 10px;
+    }
+}

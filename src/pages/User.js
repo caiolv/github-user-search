@@ -11,8 +11,6 @@ import api from '../services/api';
 
 import Loader from '../components/Loader';
 
-
-
 export default function User() {
     let history = useHistory();
     let { user: userParam } = useParams();
@@ -22,10 +20,14 @@ export default function User() {
     useEffect(() => {
         async function getUserData() {
             setLoading(true);
-            const { data } = await api.get(`/users/${userParam}`);
 
-            setUser(data);
-            setLoading(false);
+            try {
+                const { data } = await api.get(`/users/${userParam}`);
+                setUser(data);
+            } finally {
+                setLoading(false);
+            }
+
         }
         getUserData();
     }, []);
@@ -35,25 +37,26 @@ export default function User() {
     };
 
     return (
-        <>
+        <div id="user">
             {loading ? <Loader /> : user &&
                 <Container className="mt-5">
-
                     <Row className="d-flex justify-content-center">
-                        <Col xs="12" md="4" lg="" className="d-flex justify-content-center">
-                            <Image width={200} src={user.avatar_url} roundedCircle />
+                        <Col xs="12" md="4" xl="2" className="d-flex justify-content-center">
+                            <Image src={user.avatar_url} roundedCircle />
                         </Col>
-                        <Col
-                            xs="12"
-                            md="8"
-                            lg=""
+                        <Col xs="12" md="8" xl="10"
                             className="d-flex flex-column justify-content-center align-items-md-start align-items-center
-
  mt-2"
                         >
-                            <h1>{user.name || user.login}</h1>
+                            <div className="d-flex align-items-center flex-wrap justify-content-center justify-sm-content-center">
+                                <h1>{user.name || user.login}</h1>
+                                <a className="text-secondary" href={user.html_url}>@{user.login}</a>
+                            </div>
+                            <p className="text-muted mb-1 mt-2">{user.location}</p>
                             <p>{user.bio}</p>
                         </Col>
+                    </Row>
+                    <Row className="justify-content-center">
                         <Col xs="6" sm="6" md="4" className="d-flex justify-content-center mt-3">
                             <Button variant="dark" onClick={() => handleNavigate("repos")}>
                                 Visitar repositórios
@@ -67,6 +70,6 @@ export default function User() {
                     </Row>
                 </Container>
             }
-        </>
+        </div>
     )
 }
