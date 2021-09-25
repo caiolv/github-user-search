@@ -12,6 +12,7 @@ import Repo from './Repo';
 export default function SearchSource({ search, source, setFunc }) {
     let [responseData, setResponseData] = useState({ items: [] });
     let [loading, setLoading] = useState(false);
+    let [hasNextPage, setHasNextPage] = useState(false);
     const [page, setPage] = useState(1);
 
     let title = source === "users" ? "Usuários" : "Repositórios";
@@ -19,11 +20,13 @@ export default function SearchSource({ search, source, setFunc }) {
     async function loadFromSource() {
         setLoading(true);
 
-        const { data: resultResponse } = await api.get(`/search/${source}${search}`, {
+        const { data: resultResponse, headers } = await api.get(`/search/${source}${search}`, {
             params: {
                 page,
             },
         });
+
+        setHasNextPage(headers.link && Boolean(headers.link.includes("next")));
 
         setResponseData(resultResponse);
         setFunc(resultResponse)
@@ -56,6 +59,7 @@ export default function SearchSource({ search, source, setFunc }) {
                     <Pagination
                         page={page}
                         handlePage={handlePage}
+                        next={hasNextPage}
                     />
                 </TabContainer>
             )

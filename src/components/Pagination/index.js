@@ -4,7 +4,7 @@ import { MdArrowBack, MdArrowForward } from 'react-icons/md';
 
 import { Container } from './styles';
 
-export default function Pagination({ page, handlePage }) {
+export default function Pagination({ page, handlePage, next }) {
     return (
         <Container className="p-5">
             <button
@@ -19,6 +19,7 @@ export default function Pagination({ page, handlePage }) {
             <button
                 type="button"
                 onClick={() => handlePage('next')}
+                disabled={!next}
             >
                 <span>Próximo</span>
                 <MdArrowForward size={15} color="#0076f7" />
