@@ -6,18 +6,8 @@ const UserPreview = ({ user }) => {
     const { login, avatar_url } = user;
 
     return (
-        <a
-            href={`/${login}`}
-            className="d-flex flex-column pt-3 pb-0 m-0 justify-content-center align-items-center btn btn-light"
-            style={{ width: '12rem' }}
-        >
-            <Image
-                className="mb-2"
-                src={avatar_url}
-                width="100"
-                height="100"
-                roundedCircle
-            />
+        <a id="user-preview" href={`/${login}`} >
+            <Image className="mb-2" src={avatar_url} roundedCircle />
             <p>{login}</p>
         </a>
     )

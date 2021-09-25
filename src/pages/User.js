@@ -51,7 +51,7 @@ export default function User() {
 
  mt-2"
                         >
-                            <h1>{user.name}</h1>
+                            <h1>{user.name || user.login}</h1>
                             <p>{user.bio}</p>
                         </Col>
                         <Col xs="6" sm="6" md="4" className="d-flex justify-content-center mt-3">

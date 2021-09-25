@@ -32,7 +32,7 @@ export default function Repos() {
     }, []);
 
     return (
-        <Container className="mt-4 mb-5">
+        <Container className="mt-4 mb-5 mx-2">
             <Breadcrumb>
                 <Breadcrumb.Item href={`/${userParam}`}>{userParam}</Breadcrumb.Item>
                 <Breadcrumb.Item active>{source}</Breadcrumb.Item>
